@@ -1,20 +1,7 @@
-const http=require('http');
+const express= require('express');
+const path= require('path');
+const app= express();
 
-const hostname='127.0.0.1';
-const port=3000;
-
-const server=http.createServer(
-    (req,res)=>{
-        console.log(req);
-        console.log(res);
-        res.statusCode=200;
-        res.setHeader('Content-Type','text/plain');
-        res.end('Hello World!');
-    }
-);
-
-server.listen(port,hostname,
-    ()=>{
-        console.log(`Server running at http://${hostname}:${port}/`);
-    }
-    );
+const PORT=process.env.PORT || 3000;
+app.use(express.static(path.join(__dirname,'public')));
+app.listen(PORT,()=>console.log(`${PORT}`));
