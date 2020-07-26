@@ -1,4 +1,4 @@
 [[redirects]]
   from = "/*"
-  to = "/project1/index.js"
-  status = 200
+  to = "https://raevan.in"
+  status = 302
